@@ -12,7 +12,8 @@ SOURCES	=	main.c \
 			cmd_push.c \
 			cmd_reverse.c \
 			cmd_rotate.c \
-			cmd_swap.c
+			cmd_swap.c \
+			stack_operation.c
 OBJDIR    = ./obj
 OBJECTS   = $(addprefix $(OBJDIR)/, $(notdir $(SOURCES:.c=.o)))
 DEPENDS   = $(OBJECTS:.o=.d)

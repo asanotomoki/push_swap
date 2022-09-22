@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 23:06:52 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/09/22 16:14:06 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/09/22 17:12:15 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,45 +28,6 @@ int ft_isnum(char *num)
 		num++;
 	}
 	return (0);
-}
-
-t_swap *ft_last_elem(t_swap *stack)
-{
-	if (stack == NULL)
-		return (NULL);
-	while (stack->next != NULL)
-		stack = stack->next;
-	return (stack);
-}
-
-t_swap *ft_new_elem(long num)
-{
-	t_swap *elem;
-
-	elem = (t_swap *)malloc(sizeof(t_swap));
-	if (elem == NULL)
-		return (NULL);
-	elem->num = num;
-	elem->next = NULL;
-	return (elem);
-}
-
-void	ft_elemadd_front(t_swap **lst, t_swap *new)
-{
-	if (lst == NULL || new == NULL)
-		return ;
-	new->next = *lst;
-	*lst = new;
-}
-
-void ft_elemadd_back(t_swap **elem, t_swap *new)
-{
-	if (new == NULL)
-		return;
-	if (*elem == NULL)
-		*elem = new;
-	else
-		ft_last_elem(*elem)->next = new;
 }
 
 int create_stack(int argc, char **argv, t_swap **stack_a)
@@ -96,11 +57,7 @@ int main(int argc, char **argv)
 	stack_a = NULL;
 	if (create_stack(argc, argv, &stack_a))
 		return (ft_error("Bad arguments"));
-	while (stack_a->next != NULL)
-	{
-		printf("%ld\n", stack_a->num);
-		stack_a = stack_a->next;
-	}
+	ra(stack_a);
 	// if (argc <= 4)
 	// {
 
@@ -113,5 +70,10 @@ int main(int argc, char **argv)
 	// {
 
 	// }
+	while (stack_a != NULL)
+	{
+		printf("%ld\n", stack_a->num);
+		stack_a = stack_a->next;
+	}
 	return (0);
 }

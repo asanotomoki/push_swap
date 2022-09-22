@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:47:20 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/09/22 16:54:58 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/09/22 17:13:51 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void rotate(t_swap *stack) 
 {
-	stack->num = 10;	
+	
 }
 
 void ra(t_swap *stack_a)
