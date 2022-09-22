@@ -1,8 +1,8 @@
-obj
-*/libft.a
-*/obj
+./obj
+./*/libft.a
+./*/obj
 push_swap
-a.out
-*/*.o
-*/*/*/.o
+./a.out
+./*/*.o
+./*/*/*/.o
 vscode
