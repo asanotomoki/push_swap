@@ -1,6 +1,8 @@
-./obj
-./obj/*
-./libft/libft.a
-./libft/obj
-./libft/obj/*
+obj
+*/libft.a
+*/obj
 push_swap
+a.out
+*/*.o
+*/*/*/.o
+vscode
