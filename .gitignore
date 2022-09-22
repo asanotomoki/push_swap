@@ -1,0 +1,5 @@
+./obj
+./obj/*
+./libft/libft.a
+./libft/obj
+./libft/obj/*
