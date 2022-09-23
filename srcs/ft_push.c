@@ -6,18 +6,18 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 06:44:52 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/09/24 06:46:04 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/09/24 06:47:09 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_push_front(t_swap *stack, t_swap *new)
+void	ft_push_front(t_swap *stack, t_swap *new)
 {
-	t_swap *first_elem;
+	t_swap	*first_elem;
 
 	if (new == NULL)
-		return;
+		return ;
 	if (stack == NULL)
 		init_stack(stack);
 	else
@@ -30,10 +30,10 @@ void ft_push_front(t_swap *stack, t_swap *new)
 	}
 }
 
-void ft_push_back(t_swap *stack, t_swap *new)
+void	ft_push_back(t_swap *stack, t_swap *new)
 {
-	t_swap *last_elem;
-	
+	t_swap	*last_elem;
+
 	if (new == NULL)
 		return ;
 	if (stack == NULL)

@@ -14,6 +14,7 @@ SOURCES	=	main.c \
 			cmd_rotate.c \
 			cmd_swap.c \
 			stack_operation.c \
+			ft_push.c \
 			error.c \
 			push_swap_util.c
 OBJDIR    = ./obj
