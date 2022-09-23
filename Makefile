@@ -13,7 +13,9 @@ SOURCES	=	main.c \
 			cmd_reverse.c \
 			cmd_rotate.c \
 			cmd_swap.c \
-			stack_operation.c
+			stack_operation.c \
+			error.c \
+			push_swap_util.c
 OBJDIR    = ./obj
 OBJECTS   = $(addprefix $(OBJDIR)/, $(notdir $(SOURCES:.c=.o)))
 DEPENDS   = $(OBJECTS:.o=.d)
@@ -40,8 +42,6 @@ fclean:	clean
 re: fclean all
 
 test: $(NAME)
-	./pipex infile "$(cmd1)" "$(cmd2)" outfile
-	<infile $(cmd1) | $(cmd2) > test_outfile
-	diff outfile test_outfile
+	./push_swap 3 2 1
 
 .PHONY: all bonus fclean clean re test

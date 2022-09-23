@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:55:13 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/09/22 16:58:52 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/09/24 05:24:18 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,12 @@
 
 void reverse(t_swap *stack) 
 {
-	stack->num = 10;	
+	t_swap *last_elem;
+
+	last_elem = ft_last_elem(stack);
+	last_elem->prev->next = stack;
+	stack->prev = last_elem->prev;
+	ft_push_front(stack, last_elem);
 }
 
 void rra(t_swap *stack_a)
