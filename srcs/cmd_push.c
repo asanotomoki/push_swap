@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 01:46:44 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/09/22 16:51:51 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/09/24 06:32:41 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 void push(t_swap *to, t_swap *from)
 {
-	to->num = from->num;
+	t_swap *from_first_elem;
+
+	from_first_elem = ft_first_elem(from);
+	from_first_elem->next->prev = from;
+	from->next = from_first_elem->next;
+	ft_push_front(to, from_first_elem);
 }
 
 void pa(t_swap *stack_a, t_swap *stack_b)

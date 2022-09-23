@@ -6,18 +6,12 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 23:06:52 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/09/24 05:28:41 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/09/24 06:31:39 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*
- * Author: Hiroyuki Chishiro
- * License: 2-Clause BSD
- */
 #include <stdio.h>
-#include <stdlib.h>
 
 void print_list(t_swap *list)
 {
@@ -37,16 +31,19 @@ void print_list(t_swap *list)
 int main(int argc, char **argv)
 {
 	t_swap stack_a;
-	// t_swap stack_b;
+	t_swap stack_b;
 
 	if (argc == 1)
 		return 0;
 	init_stack(&stack_a);
+	init_stack(&stack_b);
 	if (create_stack(argc, argv, &stack_a))
 		return (ft_error("Bad arguments"));
+	printf("\nstackA\n");
 	print_list(&stack_a);
-	rra(&stack_a);
-	ra(&stack_a);
+	pb(&stack_b, &stack_a);
+	printf("\nstackB\n");
+	print_list(&stack_b);
 	print_list(&stack_a);
 	// if (argc <= 4)
 	// {

@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:59:09 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/09/22 16:59:45 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/09/24 05:52:19 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 
 void swap(t_swap *stack) 
 {
-	stack->num = 10;	
+	t_swap *first_elem;
+	t_swap *second_elem;
+
+	first_elem = ft_first_elem(stack);
+	second_elem = first_elem->next;
+	first_elem->next = second_elem->next;
+	ft_push_front(stack, second_elem);
 }
 
 void sa(t_swap *stack_a)
