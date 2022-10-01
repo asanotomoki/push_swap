@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   main_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 17:32:16 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/09/27 06:18:39 by asanotomoki      ###   ########.fr       */
+/*   Created: 2022/09/29 20:49:51 by asanotomoki       #+#    #+#             */
+/*   Updated: 2022/10/01 15:38:17 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int ft_error(char *err_msg)
+void main_sort(t_dswap *data)
 {
-	ft_putendl_fd(err_msg, 2);
-	exit(1);
+	size_t	i;
+
+	i = 0;
+	while (i < (data->size / 2))
+	{
+		move_top_val(data->a, 0, data->size / 2, data->size, STACK_A);
+		i++;
+	}
 }

@@ -1,24 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_util.c                                   :+:      :+:    :+:   */
+/*   put_ans.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 17:33:00 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/09/22 17:38:16 by asanotomoki      ###   ########.fr       */
+/*   Created: 2022/09/30 18:49:40 by asanotomoki       #+#    #+#             */
+/*   Updated: 2022/10/01 15:32:38 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int ft_isnum(char *num)
-{
-	while (*num)
-	{
-		if (!ft_isdigit(*num))
-			return (1);
-		num++;
-	}
-	return (0);
-}
