@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 09:41:09 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/01 18:58:31 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/07 18:34:35 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	asc_6less(t_dswap *data, size_t size)
 		pb(data->a, data->b);
 		i++;
 	}
-	asc_3less(data->a, data->size - i, data->max, data->size - 3);
+	asc_3less(data->a, size - i, data->max, size - 3);
 	desc_3less(data->b, i, 2, 0);
 	j = 0;
 	while (j++ < i)

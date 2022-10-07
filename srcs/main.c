@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 23:06:52 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/01 18:53:57 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/07 18:35:44 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void print_list(t_stack *list)
 
 t_stack *init_stack(t_stack *stack)
 {
-	stack->val = 0;
+	stack->val = -1;
 	stack->next = stack->prev = stack;
 	return (stack);
 }
@@ -46,5 +46,7 @@ int main(int argc, char **argv)
 		;
 	else if (data.size <= 6)
 		format6(&data);
+	else
+		main_sort(&data);
 	return (0);
 }

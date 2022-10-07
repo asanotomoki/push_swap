@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:43:45 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/01 17:57:32 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/07 18:35:05 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,6 @@ bool ft_isdesc(t_stack *stack, t_stack *start);
 
 int *quicksort(t_dswap *data);
 void move_top(t_stack *stack, int min, int max, size_t size);
-
+void main_sort(t_dswap *data);
 void print_list(t_stack *list);
 #endif
