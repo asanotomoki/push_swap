@@ -6,19 +6,18 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:55:13 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/07 19:41:28 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/08 05:21:12 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
-void cmd_reverse(t_stack *stack) 
+void	cmd_reverse(t_stack *stack)
 {
 	ft_push_front(stack, ft_pop_back(stack));
 }
 
-void rra(t_dswap *data)
+void	rra(t_dswap *data)
 {
 	if (!ft_check_stack_2elems(data->a))
 		return ;
@@ -26,7 +25,7 @@ void rra(t_dswap *data)
 	ft_push_back(data->ans, ft_new_elem(RRA));
 }
 
-void rrb(t_dswap *data)
+void	rrb(t_dswap *data)
 {
 	if (!ft_check_stack_2elems(data->b))
 		return ;
@@ -34,7 +33,7 @@ void rrb(t_dswap *data)
 	ft_push_back(data->ans, ft_new_elem(RRB));
 }
 
-void rrr(t_dswap *data)
+void	rrr(t_dswap *data)
 {
 	if (!ft_check_stack_2elems(data->a) && \
 	!ft_check_stack_2elems(data->b))

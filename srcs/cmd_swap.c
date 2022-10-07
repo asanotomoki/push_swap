@@ -6,17 +6,16 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:59:09 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/07 19:42:09 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/08 05:19:52 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
-void cmd_swap(t_stack *stack) 
+void	cmd_swap(t_stack *stack)
 {
-	t_stack *first_elem;
-	t_stack *third_elem;
+	t_stack	*first_elem;
+	t_stack	*third_elem;
 
 	first_elem = ft_first_elem(stack);
 	third_elem = first_elem->next->next;
@@ -25,7 +24,7 @@ void cmd_swap(t_stack *stack)
 	third_elem->prev = first_elem;
 }
 
-void sa(t_dswap *data)
+void	sa(t_dswap *data)
 {
 	if (!ft_check_stack_2elems(data->a))
 		return ;
@@ -33,7 +32,7 @@ void sa(t_dswap *data)
 	ft_push_back(data->ans, ft_new_elem(SA));
 }
 
-void sb(t_dswap *data)
+void	sb(t_dswap *data)
 {
 	if (!ft_check_stack_2elems(data->b))
 		return ;
@@ -41,7 +40,7 @@ void sb(t_dswap *data)
 	ft_push_back(data->ans, ft_new_elem(SB));
 }
 
-void ss(t_dswap *data)
+void	ss(t_dswap *data)
 {
 	if (!ft_check_stack_2elems(data->a) && \
 	!ft_check_stack_2elems(data->b))

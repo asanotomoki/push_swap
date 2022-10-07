@@ -11,6 +11,8 @@ RM = rm -f
 SOURCES	=	main.c \
 			format_6elems.c \
 			main_sort.c \
+			main_sort2.c \
+			main_sort_util.c \
 			cmd_push.c \
 			cmd_reverse.c \
 			cmd_rotate.c \
@@ -22,7 +24,13 @@ SOURCES	=	main.c \
 			util.c \
 			quicksort.c \
 			create_stackdata.c \
-			put_ans.c
+			put_ans.c \
+			check_ans.c \
+			check_push.c \
+			check_rotate.c \
+			check_reverse.c \
+			check_swap.c \
+			check_pbrapa.c
 
 OBJDIR    = ./obj
 OBJECTS   = $(addprefix $(OBJDIR)/, $(notdir $(SOURCES:.c=.o)))

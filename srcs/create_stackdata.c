@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,19 +6,18 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 07:46:49 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/09/27 05:58:39 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/08 05:31:19 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-bool check_dup(int *array, size_t size)
+bool	check_dup(int *array, size_t size)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while(i < size - 1)
+	while (i < size - 1)
 	{
 		if (array[i] == array[i + 1])
 			return (false);
@@ -28,11 +26,11 @@ bool check_dup(int *array, size_t size)
 	return (true);
 }
 
-void create_compressionlist(t_dswap *data)
+void	create_compressionlist(t_dswap *data)
 {
 	int		*array;
 	size_t	i;
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	array = quicksort(data);
 	if (!check_dup(array, data->size))
@@ -51,7 +49,7 @@ void create_compressionlist(t_dswap *data)
 	}
 }
 
-bool check_arg(char *arg)
+bool	check_arg(char *arg)
 {
 	size_t	len;
 	int		res;
@@ -75,7 +73,7 @@ bool check_arg(char *arg)
 	return (true);
 }
 
-void create_list(char **argv, t_dswap *data)
+void	create_list(char **argv, t_dswap *data)
 {
 	t_stack	*new;
 	int		val;
@@ -98,15 +96,15 @@ void create_list(char **argv, t_dswap *data)
 	data->min = 0;
 }
 
-void create_stack(int argc, char **argv, t_dswap *data)
+void	create_stack(int argc, char **argv, t_dswap *data)
 {
-	char **elems;
+	char	**elems;
 
 	argv++;
 	if (argc == 2)
 	{
 		if (!*argv[0])
-			ft_error("Error"); 
+			ft_error("Error");
 		elems = ft_split(*argv, ' ');
 		if (!elems || !elems[0])
 			ft_error("Error");

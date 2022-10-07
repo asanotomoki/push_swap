@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cmd_push.c                                         :+:      :+:    :+:   */
+/*   check_push.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 01:46:44 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/08 05:23:02 by asanotomoki      ###   ########.fr       */
+/*   Created: 2022/10/07 20:19:21 by asanotomoki       #+#    #+#             */
+/*   Updated: 2022/10/08 05:25:09 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_stack *to, t_stack *from)
+bool	check_pbpa(t_stack *ans)
 {
-	ft_push_front(to, ft_pop_front(from));
+	if (ans->val == PB && ans->next->val == PA)
+		return (true);
+	return (false);
 }
 
-void	pa(t_dswap *data)
+bool	check_papb(t_stack *ans)
 {
-	if (data->b != data->b->next)
-	{
-		push(data->a, data->b);
-		ft_push_back(data->ans, ft_new_elem(PA));
-	}
+	if (ans->val == PA && ans->next->val == PB)
+		return (true);
+	return (false);
 }
 
-void	pb(t_dswap *data)
+void	del_push(t_stack *ans)
 {
-	if (data->a != data->a->next)
-	{
-		push(data->b, data->a);
-		ft_push_back(data->ans, ft_new_elem(PB));
-	}
+	del_ans(ans->next);
+	del_ans(ans);
 }

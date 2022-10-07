@@ -6,13 +6,13 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:49:40 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/07 19:53:21 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/08 05:24:52 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void search_ans(int ans)
+void	search_ans(int ans)
 {
 	if (ans == RA)
 		ft_putendl_fd("ra", 1);
@@ -38,11 +38,12 @@ void search_ans(int ans)
 		ft_putendl_fd("rrr", 1);
 }
 
-void put_ans(t_stack *ans)
+void	put_ans(t_stack *ans)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = ans->next;
+	check_ans(ans);
 	while (tmp != ans)
 	{
 		search_ans(tmp->val);

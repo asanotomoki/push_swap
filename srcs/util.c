@@ -6,14 +6,14 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:33:00 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/07 19:37:20 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/08 05:22:13 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdbool.h>
 
-int ft_isnum(char *num)
+int	ft_isnum(char *num)
 {
 	if (*num == '-' || *num == '+')
 		num++;
@@ -26,16 +26,16 @@ int ft_isnum(char *num)
 	return (0);
 }
 
-bool ft_check_stack_2elems(t_stack *stack)
+bool	ft_check_stack_2elems(t_stack *stack)
 {
 	if (stack->next->next == stack)
 		return (false);
 	return (true);
 }
 
-bool ft_isasc(t_stack *stack, t_stack *start)
+bool	ft_isasc(t_stack *stack, t_stack *start)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = start;
 	while (tmp->next != stack)
@@ -47,9 +47,9 @@ bool ft_isasc(t_stack *stack, t_stack *start)
 	return (true);
 }
 
-bool ft_isdesc(t_stack *stack, t_stack *start)
+bool	ft_isdesc(t_stack *stack, t_stack *start)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = start;
 	while (tmp->next != stack)
@@ -61,11 +61,11 @@ bool ft_isdesc(t_stack *stack, t_stack *start)
 	return (true);
 }
 
-void move_top(t_dswap *data, int min, int max, size_t size)
+void	move_top(t_dswap *data, int min, int max, size_t size)
 {
-	t_stack *tmp;
-	size_t i;
-	size_t j;
+	t_stack	*tmp;
+	size_t	i;
+	size_t	j;
 
 	tmp = data->a->next;
 	i = 0;
