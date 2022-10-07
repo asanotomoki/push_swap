@@ -21,7 +21,8 @@ SOURCES	=	main.c \
 			error.c \
 			util.c \
 			quicksort.c \
-			create_stackdata.c
+			create_stackdata.c \
+			put_ans.c
 
 OBJDIR    = ./obj
 OBJECTS   = $(addprefix $(OBJDIR)/, $(notdir $(SOURCES:.c=.o)))

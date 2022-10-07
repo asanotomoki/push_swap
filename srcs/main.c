@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 23:06:52 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/07 19:08:41 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/07 19:51:01 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,6 @@ int main(int argc, char **argv)
 	else
 		main_sort(&data);
 	all_free_stack(data.a);
+	put_ans(data.ans);
 	return (0);
 }

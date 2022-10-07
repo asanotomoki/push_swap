@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:43:45 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/07 19:36:08 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/07 19:49:51 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,6 @@ int *quicksort(t_dswap *data);
 void move_top(t_dswap *data, int min, int max, size_t size);
 void main_sort(t_dswap *data);
 void print_list(t_stack *list);
+
+void put_ans(t_stack *ans);
 #endif

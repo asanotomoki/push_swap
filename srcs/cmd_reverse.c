@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:55:13 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/07 19:21:58 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/07 19:41:28 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void rra(t_dswap *data)
 	if (!ft_check_stack_2elems(data->a))
 		return ;
 	cmd_reverse(data->a);
-	ft_putendl_fd("rra", 1);
+	ft_push_back(data->ans, ft_new_elem(RRA));
 }
 
 void rrb(t_dswap *data)
@@ -31,7 +31,7 @@ void rrb(t_dswap *data)
 	if (!ft_check_stack_2elems(data->b))
 		return ;
 	cmd_reverse(data->b);
-	ft_putendl_fd("rrb", 1);
+	ft_push_back(data->ans, ft_new_elem(RRB));
 }
 
 void rrr(t_dswap *data)
@@ -41,5 +41,5 @@ void rrr(t_dswap *data)
 		return ;
 	cmd_reverse(data->a);
 	cmd_reverse(data->b);
-	ft_putendl_fd("rrr", 1);
+	ft_push_back(data->ans, ft_new_elem(RRR));
 }
