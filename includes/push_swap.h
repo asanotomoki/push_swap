@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:43:45 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/07 18:35:05 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/07 19:36:08 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,43 +42,32 @@ typedef struct s_stack
 	struct s_stack *prev;
 } t_stack;
 
-typedef struct s_operation
-{
-	int val;
-	struct s_answer *next;
-} t_operation;
-
 typedef struct s_dswap
 {
 	t_stack *a;
 	t_stack *b;
-	t_operation *a_cmd;
-	t_operation *b_cmd;
+	t_stack *ans;
+	size_t size;
 	int min;
 	int max;
-	int median;
-	size_t size;
 } t_dswap;
 
 void format6(t_dswap *data);
 
-void sa(t_stack *stack_a);
-void sb(t_stack *stack_b);
-void ss(t_stack *stack_a, t_stack *stack_b);
-void swap(t_stack *stack, int flag);
+void sa(t_dswap *data);
+void sb(t_dswap *data);
+void ss(t_dswap *data);
 
-void ra(t_stack *stack_a);
-void rb(t_stack *stack_b);
-void rr(t_stack *stack_a, t_stack *stack_b);
-void rotate(t_stack *stack, int flag);
+void ra(t_dswap *data);
+void rb(t_dswap *data);
+void rr(t_dswap *data);
 
-void rra(t_stack *stack_a);
-void rrb(t_stack *stack_b);
-void rrr(t_stack *stack_a, t_stack *stack_b);
-void reverse(t_stack *stack, int flag);
+void rra(t_dswap *data);
+void rrb(t_dswap *data);
+void rrr(t_dswap *data);
 
-void pa(t_stack *stack_a, t_stack *stack_b);
-void pb(t_stack *stack_a, t_stack *stack_b);
+void pa(t_dswap *data);
+void pb(t_dswap *data);
 
 t_stack *ft_first_elem(t_stack *stack);
 t_stack *ft_last_elem(t_stack *stack);
@@ -99,7 +88,7 @@ bool ft_isasc(t_stack *stack, t_stack *start);
 bool ft_isdesc(t_stack *stack, t_stack *start);
 
 int *quicksort(t_dswap *data);
-void move_top(t_stack *stack, int min, int max, size_t size);
+void move_top(t_dswap *data, int min, int max, size_t size);
 void main_sort(t_dswap *data);
 void print_list(t_stack *list);
 #endif

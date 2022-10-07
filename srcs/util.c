@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:33:00 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/07 18:34:49 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/07 19:37:20 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,15 @@ bool ft_isdesc(t_stack *stack, t_stack *start)
 	return (true);
 }
 
-void move_top(t_stack *stack, int min, int max, size_t size)
+void move_top(t_dswap *data, int min, int max, size_t size)
 {
 	t_stack *tmp;
 	size_t i;
 	size_t j;
 
-	tmp = stack->next;
+	tmp = data->a->next;
 	i = 0;
-	while ((tmp->val < min || tmp->val > max) && tmp != stack)
+	while ((tmp->val < min || tmp->val > max) && tmp != data->a)
 	{
 		tmp = tmp->next;
 		i++;
@@ -82,8 +82,8 @@ void move_top(t_stack *stack, int min, int max, size_t size)
 	while (j++ < i)
 	{
 		if (size / 2 < i)
-			reverse(stack, STACK_A);
+			rra(data);
 		else
-			rotate(stack, STACK_A);
+			ra(data);
 	}
 }

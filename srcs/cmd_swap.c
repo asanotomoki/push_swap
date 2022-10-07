@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:59:09 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/07 18:34:31 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/07 19:23:01 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,37 +25,28 @@ void cmd_swap(t_stack *stack)
 	third_elem->prev = first_elem;
 }
 
-void sa(t_stack *stack_a)
+void sa(t_dswap *data)
 {
-	if (!ft_check_stack_2elems(stack_a))
+	if (!ft_check_stack_2elems(data->a))
 		return ;
-	cmd_swap(stack_a);
+	cmd_swap(data->a);
 	ft_putendl_fd("sa", 1);
 }
 
-void sb(t_stack *stack_b)
+void sb(t_dswap *data)
 {
-	if (!ft_check_stack_2elems(stack_b))
+	if (!ft_check_stack_2elems(data->b))
 		return ;
-	cmd_swap(stack_b);
+	cmd_swap(data->b);
 	ft_putendl_fd("sb", 1);
 }
 
-void ss(t_stack *stack_a, t_stack *stack_b)
+void ss(t_dswap *data)
 {
-	if (!ft_check_stack_2elems(stack_a) && \
-	!ft_check_stack_2elems(stack_b))
+	if (!ft_check_stack_2elems(data->a) && \
+	!ft_check_stack_2elems(data->b))
 		return ;
-	cmd_swap(stack_a);
-	cmd_swap(stack_b);
+	cmd_swap(data->a);
+	cmd_swap(data->b);
 	ft_putendl_fd("ss", 1);
 }
-
-void swap(t_stack *stack, int flag)
-{
-	if (flag == STACK_A)
-		sa(stack);
-	else
-		sb(stack);
-}
-

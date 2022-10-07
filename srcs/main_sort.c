@@ -6,7 +6,7 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:49:51 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/07 18:21:35 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/07 19:30:07 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ void half_sort(t_dswap *data, int count)
 
 	j = 0;
 	while (j++ < count)
-		rrb(data->b);
+		rrb(data);
 	while (0 < count--)
 	{
-		pa(data->a, data->b);
-		ra(data->a);
+		pa(data);
+		ra(data);
 	}
 }
 
@@ -56,12 +56,12 @@ int split_half(t_dswap *data, size_t size)
 	while (i < size)
 	{
 		if (data->max / 2 < data->a->next->val)
-			ra(data->a);
+			ra(data);
 		else
-			pb(data->a, data->b);
+			pb(data);
 		if (data->b->next->val == count)
 		{
-			rb(data->b);
+			rb(data);
 			count++;
 		}
 		i++;
@@ -78,14 +78,14 @@ void set_b(t_dswap *data, size_t pb_size, int ans, int max)
 	while (i < pb_size && data->a->next->val <= max && data->a->next->val >= ans)
 	{
 		if (data->a->next->next->val == ans)
-			sa(data->a);
+			sa(data);
 		if (data->a->next->val == ans)
 		{
-			ra(data->a);
+			ra(data);
 			ans++;
 		}
 		else
-			pb(data->a, data->b);
+			pb(data);
 		i++;
 	}
 }
@@ -132,15 +132,15 @@ void b_quick_sort(t_dswap *data, int min)
 		while (i < size)
 		{
 			if (data->b->next->val < pivot)
-				rb(data->b);
+				rb(data);
 			else
-				pa(data->a, data->b);
+				pa(data);
 			if (data->b->next->next->val == min)
-				sb(data->b);
+				sb(data);
 			if (data->b->next->val == min)
 			{
-				pa(data->a, data->b);
-				ra(data->a);
+				pa(data);
+				ra(data);
 				min++;
 			}
 			i++;
@@ -158,12 +158,12 @@ void allsort(t_dswap *data, int ans)
 	i = 0;
 	while (i < b_size)
 	{
-		pa(data->a, data->b);
+		pa(data);
 		if (data->a->next->next->val == ans)
-			sa(data->a);
+			sa(data);
 		if (data->a->next->val == ans)
 		{
-			ra(data->a);
+			ra(data);
 			ans++;
 		}
 		i++;
@@ -173,10 +173,10 @@ void allsort(t_dswap *data, int ans)
 	{
 
 		if (data->a->next->next->val == ans)
-			sa(data->a);
+			sa(data);
 		if (data->a->next->val == ans)
 		{
-			ra(data->a);
+			ra(data);
 			ans++;
 		}
 		else

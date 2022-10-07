@@ -81,6 +81,7 @@ void create_list(char **argv, t_dswap *data)
 	int		val;
 
 	data->size = 0;
+	data->max = -1;
 	while (*argv)
 	{
 		if (!check_arg(*argv))
@@ -91,11 +92,10 @@ void create_list(char **argv, t_dswap *data)
 			ft_error("ERROR");
 		ft_push_back(data->a, new);
 		data->size++;
+		data->max++;
 	}
 	create_compressionlist(data);
 	data->min = 0;
-	data->max = data->size - 1;
-	data->median = (int)data->size / 2;
 }
 
 void create_stack(int argc, char **argv, t_dswap *data)

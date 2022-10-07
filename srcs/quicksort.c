@@ -6,24 +6,24 @@
 /*   By: asanotomoki <asanotomoki@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 18:54:15 by asanotomoki       #+#    #+#             */
-/*   Updated: 2022/10/01 15:47:12 by asanotomoki      ###   ########.fr       */
+/*   Updated: 2022/10/07 18:55:01 by asanotomoki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*get_array(t_stack *stack, size_t size)
+int	*get_array(t_dswap *data)
 {
 	t_stack	*tmp;
 	size_t	i;
 	int		*array;
 
-	array = (int *)malloc(sizeof(int) * size);
+	array = (int *)malloc(sizeof(int) * data->size);
 	if (!array)
 		ft_error("ERROR");
-	tmp = stack->next;
+	tmp = data->a->next;
 	i = 0;
-	while (tmp != stack)
+	while (tmp != data->a)
 	{
 		array[i++] = tmp->val;
 		tmp = tmp->next;
@@ -70,7 +70,7 @@ int	*quicksort(t_dswap *data)
 {
 	int	*array;
 
-	array = get_array(data->a, data->size);
-	quicksort_main(array, 0, data->size - 1);
+	array = get_array(data);
+	quicksort_main(array, 0, data->max);
 	return (array);
 }
